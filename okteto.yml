@@ -14,4 +14,4 @@ deploy:
   # - name: Delete prepare-kafka job
   #   command: kubectl delete job prepare-kafka --ignore-not-found=true --wait
   - name: Run helm upgrade
-    command: helm upgrade --install ava-api --set imageAssist=${OKTETO_BUILD_ASSIST_IMAGE}
+    command: helm upgrade --install ava-api chart --set imageAssist=${OKTETO_BUILD_ASSIST_IMAGE}

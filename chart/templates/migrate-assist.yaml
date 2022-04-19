@@ -11,5 +11,5 @@ spec:
           command: ["yarn", "migrate", "deploy"]
           env:
             - name: "DATABASE_URL"
-              value: {{.Values.assist.databaseUrl}}
+              value: postgresql://okteto:okteto@postgresql:5432/assist
       restartPolicy: "OnFailure"
