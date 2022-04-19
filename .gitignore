@@ -1,0 +1,10 @@
+build
+node_modules
+okteto-stack.yml
+*.log
+.secrets
+
+.eslintcache
+temp
+values.prod.yaml
+values.yaml

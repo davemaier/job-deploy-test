@@ -1,0 +1,17 @@
+build:
+  assist:
+    context: assist
+
+deploy:
+  # - name: Install doppler cli
+  #   command: apt-get update && apt-get install -y -qq gnupg && curl -sLf --retry 3 'https://packages.doppler.com/public/cli/gpg.DE2A7741A397C129.key' | apt-key add - && echo "deb https://packages.doppler.com/public/cli/deb/debian any-version main" | tee /etc/apt/sources.list.d/doppler-cli.list && apt-get update && apt-get install -y doppler
+  # - name: Get doppler secrets
+  #   command: doppler secrets substitute chart/values_template.yaml -c ${DOPPLER_CONFIG} > chart/values.yaml
+  # - name: Delete migrate-chat job
+  #   command: kubectl delete job migrate-chat --ignore-not-found=true --wait
+  - name: Delete migrate-assist job
+    command: kubectl delete job migrate-assist --ignore-not-found=true --wait
+  # - name: Delete prepare-kafka job
+  #   command: kubectl delete job prepare-kafka --ignore-not-found=true --wait
+  - name: Run helm upgrade
+    command: helm upgrade --install ava-api --set imageAssist=${OKTETO_BUILD_ASSIST_IMAGE}

@@ -1,0 +1,6 @@
+dependencies:
+- name: postgresql
+  repository: https://apps.okteto.com
+  version: 6.3.12
+digest: sha256:6b366660471c9624ebb12dbaeae8f4814e7a82a966d79373d00f73315d43f334
+generated: "2022-04-19T08:21:46.663965+02:00"

@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "strict": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "outDir": "build",
+    "target": "ESNext",
+    "resolveJsonModule": true
+  }
+}

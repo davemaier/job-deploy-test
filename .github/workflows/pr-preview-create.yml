@@ -1,0 +1,31 @@
+name: Create Okteto Preview
+
+on:
+  pull_request:
+    branches:
+      - "*"
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: Login
+        uses: okteto/context@latest
+        with:
+          token: ${{ secrets.OKTETO_TOKEN }}
+
+      - name: "Create development environments namespace"
+        #if: github.event_name == 'pull_request' && (github.event.action == 'opened' || github.event.action == 'reopened')
+        uses: okteto/create-namespace@latest
+        with:
+          namespace: pr-${{ github.event.number }}-davemaier
+
+      - name: "Trigger the pipeline"
+        uses: okteto/pipeline@latest
+        with:
+          name: ava-api
+          namespace: pr-${{ github.event.number }}-davemaier
+          timeout: 8m

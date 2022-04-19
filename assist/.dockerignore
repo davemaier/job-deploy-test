@@ -1,0 +1,6 @@
+node_modules
+.stignore
+okteto.yml
+prisma/generated
+build
+.env*

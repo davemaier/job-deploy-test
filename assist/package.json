@@ -1,0 +1,25 @@
+{
+  "name": "assist",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "repository": "https://github.com/cfs-gmbh/ava-api",
+  "scripts": {
+    "build": "tsc",
+    "start": "dotenv -- node build/src",
+    "dev": "dotenv -- tsnd --no-notify --inspect --no-deps --respawn --poll --interval 1000 --transpile-only src",
+    "migrate": "dotenv -- prisma migrate",
+    "seed": "dotenv -- prisma db seed --preview-feature",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.11.1",
+    "prisma": "^3.11.1",
+    "zod": "^3.9.8"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^4.0.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "4.4.3"
+  }
+}

@@ -1,0 +1,10 @@
+apiVersion: v2
+name: ava-api
+description: Contains the complete backend of ava
+type: application
+version: 0.0.2
+dependencies:
+  - name: postgresql
+    version: "6.3.12"
+    condition: postgresql.enabled
+    repository: "https://apps.okteto.com"
