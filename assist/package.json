@@ -10,7 +10,8 @@
     "dev": "dotenv -- tsnd --no-notify --inspect --no-deps --respawn --poll --interval 1000 --transpile-only src",
     "migrate": "dotenv -- prisma migrate",
     "seed": "dotenv -- prisma db seed --preview-feature",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "generate": "dotenv -- prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^3.11.1",
