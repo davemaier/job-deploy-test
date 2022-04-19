@@ -31,7 +31,7 @@ spec:
             - containerPort: 4000
           env:
             - name: "DATABASE_URL"
-              value: {{.Values.assist.databaseUrl}}
+              value: postgresql://okteto:okteto@postgresql:5432/assist
           startupProbe:
             httpGet:
               path: /.well-known/apollo/server-health
