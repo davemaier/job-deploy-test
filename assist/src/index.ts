@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
 import { seedRunner } from "../prisma/seeds/seedRunner";
-import { AmazonConnection, env, isDev } from "./utils";
+import { isDev } from "./utils";
 
 async function start() {
   const prisma = new PrismaClient();
